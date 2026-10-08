@@ -2,6 +2,6 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-flake8==7.8.1
+flake8==7.4.1
 nose2==0.16.0
 callee==0.3.1
