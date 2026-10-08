@@ -4,8 +4,8 @@
 FROM ubuntu:26.04 AS deps
 
 SHELL ["/bin/bash", "-c"]
-ENV PKG_DEPS python3 python3-venv git
-ENV VENV /p4runtime-sh/venv
+ENV PKG_DEPS="python3 python3-venv git"
+ENV VENV=/p4runtime-sh/venv
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends $PKG_DEPS && \
@@ -27,8 +27,8 @@ LABEL maintainer="P4 Developers <p4-dev@lists.p4.org>"
 LABEL description="A shell based on ipython3 for P4Runtime"
 
 # Any easy way to avoid installing these packages again?
-ENV PKG_DEPS python3
-ENV VENV /p4runtime-sh/venv
+ENV PKG_DEPS=python3
+ENV VENV=/p4runtime-sh/venv
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends $PKG_DEPS && \
