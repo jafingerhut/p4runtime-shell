@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2019 Antonin Bas
 #
 # SPDX-License-Identifier: Apache-2.0
-FROM ubuntu:22.04 AS deps
+FROM ubuntu:26.04 AS deps
 
 SHELL ["/bin/bash", "-c"]
 ENV PKG_DEPS python3 python3-venv git
@@ -22,7 +22,7 @@ RUN python3 -m venv $VENV && \
     pip3 install . && \
     rm -rf ~/.cache/pip
 
-FROM ubuntu:22.04
+FROM ubuntu:26.04
 LABEL maintainer="P4 Developers <p4-dev@lists.p4.org>"
 LABEL description="A shell based on ipython3 for P4Runtime"
 
